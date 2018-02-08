@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('styles.css');
 const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.resolve('./src/index.js'),
@@ -56,5 +57,9 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         }),
+        new CopyWebpackPlugin([{
+            from: 'json/',
+            to: path.resolve(__dirname, 'dist/json')
+        }])
     ]
 };

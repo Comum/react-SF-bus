@@ -1,16 +1,32 @@
+function getJsonData(url) {
+    return new Promise(function (resolve, reject) {
+        $.getJSON('./json/agencyList.json', function (data) {
+            setTimeout(function () {
+                resolve(data);
+            }, 1000);
+        })
+    });
+}
+
 module.exports = {
     getBusAgencies: function () {
-        let agencies;
-        
-        $.getJSON('http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList', function(data) {
-            agencies = data.agency;
-        });
+        // return $.getJSON('http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList', function(data) {
 
-        return agencies;
+        return new Promise(function (resolve, reject) {
+            getJsonData('./agencyList.json')
+            .then(function (value) {
+                resolve(value);
+            });
+        });
     },
     getBusRoutes: function () {
-        let agencies = module.exports.getBusAgencies();
+        let agencies;
 
-        console.log(agencies);
+        module.exports.getBusAgencies()
+            .then(function (value) {
+                agencies = value;
+
+                console.log('aqui', agencies);
+            });
     }
 };

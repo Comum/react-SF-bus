@@ -1,0 +1,631 @@
+{
+    "route": [
+        {
+            "title": "B",
+            "tag": "B"
+        },
+        {
+            "title": "Broadway Shuttle Day",
+            "tag": "BSD"
+        },
+        {
+            "title": "Broadway Shuttle Night",
+            "tag": "BSN"
+        },
+        {
+            "title": "C",
+            "tag": "C"
+        },
+        {
+            "title": "CB",
+            "tag": "CB"
+        },
+        {
+            "title": "E",
+            "tag": "E"
+        },
+        {
+            "title": "F",
+            "tag": "F"
+        },
+        {
+            "title": "FS",
+            "tag": "FS"
+        },
+        {
+            "title": "G",
+            "tag": "G"
+        },
+        {
+            "title": "H",
+            "tag": "H"
+        },
+        {
+            "title": "J",
+            "tag": "J"
+        },
+        {
+            "title": "L",
+            "tag": "L"
+        },
+        {
+            "title": "LA",
+            "tag": "LA"
+        },
+        {
+            "title": "LC",
+            "tag": "LC"
+        },
+        {
+            "title": "M",
+            "tag": "M"
+        },
+        {
+            "title": "NL",
+            "tag": "NL"
+        },
+        {
+            "title": "NX",
+            "tag": "NX"
+        },
+        {
+            "title": "NXC",
+            "tag": "NXC"
+        },
+        {
+            "title": "NX1",
+            "tag": "NX1"
+        },
+        {
+            "title": "NX2",
+            "tag": "NX2"
+        },
+        {
+            "title": "NX3",
+            "tag": "NX3"
+        },
+        {
+            "title": "NX4",
+            "tag": "NX4"
+        },
+        {
+            "title": "O",
+            "tag": "O"
+        },
+        {
+            "title": "OX",
+            "tag": "OX"
+        },
+        {
+            "title": "P",
+            "tag": "P"
+        },
+        {
+            "title": "S",
+            "tag": "S"
+        },
+        {
+            "title": "SB",
+            "tag": "SB"
+        },
+        {
+            "title": "U",
+            "tag": "U"
+        },
+        {
+            "title": "V",
+            "tag": "V"
+        },
+        {
+            "title": "W",
+            "tag": "W"
+        },
+        {
+            "title": "Z",
+            "tag": "Z"
+        },
+        {
+            "title": "1",
+            "tag": "1"
+        },
+        {
+            "title": "6",
+            "tag": "6"
+        },
+        {
+            "title": "7",
+            "tag": "7"
+        },
+        {
+            "title": "10",
+            "tag": "10"
+        },
+        {
+            "title": "12",
+            "tag": "12"
+        },
+        {
+            "title": "14",
+            "tag": "14"
+        },
+        {
+            "title": "18",
+            "tag": "18"
+        },
+        {
+            "title": "19 Downtown Oakland - Fruitvale Bart",
+            "shortTitle": "19",
+            "tag": "19"
+        },
+        {
+            "title": "20",
+            "tag": "20"
+        },
+        {
+            "title": "21",
+            "tag": "21"
+        },
+        {
+            "title": "22",
+            "tag": "22"
+        },
+        {
+            "title": "29 Emeryville/West Oakland Bart/Lakeshore",
+            "shortTitle": "29",
+            "tag": "29"
+        },
+        {
+            "title": "32",
+            "tag": "32"
+        },
+        {
+            "title": "33 Montclair\\ Highland",
+            "shortTitle": "33",
+            "tag": "33"
+        },
+        {
+            "title": "36 West Oakland Bart/ Bancroft/Berkeley",
+            "shortTitle": "36",
+            "tag": "36"
+        },
+        {
+            "title": "37",
+            "tag": "37"
+        },
+        {
+            "title": "39",
+            "tag": "39"
+        },
+        {
+            "title": "40",
+            "tag": "40"
+        },
+        {
+            "title": "45",
+            "tag": "45"
+        },
+        {
+            "title": "46",
+            "tag": "46"
+        },
+        {
+            "title": "46L",
+            "tag": "46L"
+        },
+        {
+            "title": "47",
+            "tag": "47"
+        },
+        {
+            "title": "48",
+            "tag": "48"
+        },
+        {
+            "title": "51A",
+            "tag": "51A"
+        },
+        {
+            "title": "51B",
+            "tag": "51B"
+        },
+        {
+            "title": "52",
+            "tag": "52"
+        },
+        {
+            "title": "54",
+            "tag": "54"
+        },
+        {
+            "title": "57",
+            "tag": "57"
+        },
+        {
+            "title": "60",
+            "tag": "60"
+        },
+        {
+            "title": "62",
+            "tag": "62"
+        },
+        {
+            "title": "65",
+            "tag": "65"
+        },
+        {
+            "title": "67",
+            "tag": "67"
+        },
+        {
+            "title": "70",
+            "tag": "70"
+        },
+        {
+            "title": "71",
+            "tag": "71"
+        },
+        {
+            "title": "72",
+            "tag": "72"
+        },
+        {
+            "title": "72M",
+            "tag": "72M"
+        },
+        {
+            "title": "72R",
+            "tag": "72R"
+        },
+        {
+            "title": "73",
+            "tag": "73"
+        },
+        {
+            "title": "74",
+            "tag": "74"
+        },
+        {
+            "title": "75",
+            "tag": "75"
+        },
+        {
+            "title": "76",
+            "tag": "76"
+        },
+        {
+            "title": "79 Rockridge/Berkeley/El Cerrito Bart",
+            "shortTitle": "79",
+            "tag": "79"
+        },
+        {
+            "title": "80 Claremont/El Cerrito Bart",
+            "shortTitle": "80",
+            "tag": "80"
+        },
+        {
+            "title": "81 Claremont/Berkeley/Amtrak/Berk.Marina",
+            "shortTitle": "81",
+            "tag": "81"
+        },
+        {
+            "title": "83",
+            "tag": "83"
+        },
+        {
+            "title": "85",
+            "tag": "85"
+        },
+        {
+            "title": "86",
+            "tag": "86"
+        },
+        {
+            "title": "88",
+            "tag": "88"
+        },
+        {
+            "title": "89",
+            "tag": "89"
+        },
+        {
+            "title": "90",
+            "tag": "90"
+        },
+        {
+            "title": "93",
+            "tag": "93"
+        },
+        {
+            "title": "94",
+            "tag": "94"
+        },
+        {
+            "title": "95",
+            "tag": "95"
+        },
+        {
+            "title": "96 Fruitvale Montana/ Alameda Point",
+            "shortTitle": "96",
+            "tag": "96"
+        },
+        {
+            "title": "97",
+            "tag": "97"
+        },
+        {
+            "title": "98",
+            "tag": "98"
+        },
+        {
+            "title": "99",
+            "tag": "99"
+        },
+        {
+            "title": "200",
+            "tag": "200"
+        },
+        {
+            "title": "210",
+            "tag": "210"
+        },
+        {
+            "title": "212",
+            "tag": "212"
+        },
+        {
+            "title": "215",
+            "tag": "215"
+        },
+        {
+            "title": "216",
+            "tag": "216"
+        },
+        {
+            "title": "217",
+            "tag": "217"
+        },
+        {
+            "title": "232",
+            "tag": "232"
+        },
+        {
+            "title": "239",
+            "tag": "239"
+        },
+        {
+            "title": "251",
+            "tag": "251"
+        },
+        {
+            "title": "314",
+            "tag": "314"
+        },
+        {
+            "title": "339",
+            "tag": "339"
+        },
+        {
+            "title": "356",
+            "tag": "356"
+        },
+        {
+            "title": "376",
+            "tag": "376"
+        },
+        {
+            "title": "386",
+            "tag": "386"
+        },
+        {
+            "title": "604",
+            "tag": "604"
+        },
+        {
+            "title": "605",
+            "tag": "605"
+        },
+        {
+            "title": "606",
+            "tag": "606"
+        },
+        {
+            "title": "607",
+            "tag": "607"
+        },
+        {
+            "title": "611 Diamond Dist./ Westlake M.S./ Piedmont",
+            "shortTitle": "611",
+            "tag": "611"
+        },
+        {
+            "title": "617 Seminary Ave/ Skyline H.S.",
+            "shortTitle": "617",
+            "tag": "617"
+        },
+        {
+            "title": "620",
+            "tag": "620"
+        },
+        {
+            "title": "621",
+            "tag": "621"
+        },
+        {
+            "title": "623",
+            "tag": "623"
+        },
+        {
+            "title": "624",
+            "tag": "624"
+        },
+        {
+            "title": "625",
+            "tag": "625"
+        },
+        {
+            "title": "626",
+            "tag": "626"
+        },
+        {
+            "title": "628",
+            "tag": "628"
+        },
+        {
+            "title": "629",
+            "tag": "629"
+        },
+        {
+            "title": "631",
+            "tag": "631"
+        },
+        {
+            "title": "638",
+            "tag": "638"
+        },
+        {
+            "title": "642",
+            "tag": "642"
+        },
+        {
+            "title": "646",
+            "tag": "646"
+        },
+        {
+            "title": "648",
+            "tag": "648"
+        },
+        {
+            "title": "649",
+            "tag": "649"
+        },
+        {
+            "title": "650",
+            "tag": "650"
+        },
+        {
+            "title": "652",
+            "tag": "652"
+        },
+        {
+            "title": "653",
+            "tag": "653"
+        },
+        {
+            "title": "654",
+            "tag": "654"
+        },
+        {
+            "title": "655",
+            "tag": "655"
+        },
+        {
+            "title": "657",
+            "tag": "657"
+        },
+        {
+            "title": "658",
+            "tag": "658"
+        },
+        {
+            "title": "660",
+            "tag": "660"
+        },
+        {
+            "title": "662",
+            "tag": "662"
+        },
+        {
+            "title": "663",
+            "tag": "663"
+        },
+        {
+            "title": "667",
+            "tag": "667"
+        },
+        {
+            "title": "668",
+            "tag": "668"
+        },
+        {
+            "title": "669",
+            "tag": "669"
+        },
+        {
+            "title": "671",
+            "tag": "671"
+        },
+        {
+            "title": "672",
+            "tag": "672"
+        },
+        {
+            "title": "675",
+            "tag": "675"
+        },
+        {
+            "title": "676",
+            "tag": "676"
+        },
+        {
+            "title": "677",
+            "tag": "677"
+        },
+        {
+            "title": "679",
+            "tag": "679"
+        },
+        {
+            "title": "680",
+            "tag": "680"
+        },
+        {
+            "title": "681",
+            "tag": "681"
+        },
+        {
+            "title": "682",
+            "tag": "682"
+        },
+        {
+            "title": "684",
+            "tag": "684"
+        },
+        {
+            "title": "687",
+            "tag": "687"
+        },
+        {
+            "title": "688",
+            "tag": "688"
+        },
+        {
+            "title": "696",
+            "tag": "696"
+        },
+        {
+            "title": "800",
+            "tag": "800"
+        },
+        {
+            "title": "801",
+            "tag": "801"
+        },
+        {
+            "title": "802",
+            "tag": "802"
+        },
+        {
+            "title": "805",
+            "tag": "805"
+        },
+        {
+            "title": "840",
+            "tag": "840"
+        },
+        {
+            "title": "851",
+            "tag": "851"
+        }
+    ],
+    "copyright": "All data copyright AC Transit 2018."
+}
