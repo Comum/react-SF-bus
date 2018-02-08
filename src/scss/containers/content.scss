@@ -1,0 +1,11 @@
+.contentWrapper {
+    widows: 100%;
+    height: calc(100% - #{$headerHeight});
+}
+
+.contentMain {
+    width: calc(100% - #{$routeFilterWidth});
+    height: 100%;
+
+    float: left;
+}
