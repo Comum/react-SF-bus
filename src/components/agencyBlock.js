@@ -8,7 +8,7 @@ class AgencyBlock extends React.Component {
 
     render() {
         return (
-            <li key={this.props.agency.tag}>{this.props.agency.title}</li>
+            <li className="agencyItem" key={this.props.agency.tag}>{this.props.agency.title}</li>
         );
     }
 }
