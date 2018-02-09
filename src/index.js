@@ -1,19 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
+import { HashRouter, Route, Link } from 'react-router-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { routerReducer } from 'react-router-redux';
 
 import './scss/_import.scss';
 
-import Header from './components/header.js';
-import Content from './container/content.js';
+import { receiveBusAgencies } from './actions';
+import reducers from './reducers';
+import SfHomeContainer from './containers/sfHomeContainer.js';
 
-const render = () => {
-    ReactDOM.render((
-        <div className="app">
-            <Header />
-            <Content />
-        </div>
-    ), document.getElementById('root'));
-}
-render();
+const store = createStore(
+    combineReducers({
+        ...reducers,
+        routing: routerReducer
+    }),
+    applyMiddleware(thunk)
+);
+
+ReactDOM.render((
+    <Provider store={store}>
+        <HashRouter>
+            <Route path="/" component={SfHomeContainer}></Route>
+        </HashRouter>
+    </Provider>
+), document.getElementById('root'));
+
+store.dispatch(receiveBusAgencies());

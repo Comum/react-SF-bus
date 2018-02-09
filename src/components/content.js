@@ -1,8 +1,8 @@
 import React from 'react';
 
-import RouteSelected from '../components/routeSelected';
-import RoutePicker from '../components/routePicker';
-import SFMap from '../components/SFMap';
+import RouteSelected from './routeSelected';
+import RoutePicker from './routePicker';
+import SFMap from './SFMap';
 
 class Content extends React.Component {
     render() {

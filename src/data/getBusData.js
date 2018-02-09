@@ -1,9 +1,7 @@
 function getJsonData(url) {
     return new Promise(function (resolve, reject) {
-        $.getJSON('./json/agencyList.json', function (data) {
-            setTimeout(function () {
-                resolve(data);
-            }, 1000);
+        $.getJSON('http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList', function (data) {
+            resolve(data);
         })
     });
 }
@@ -11,22 +9,39 @@ function getJsonData(url) {
 module.exports = {
     getBusAgencies: function () {
         // return $.getJSON('http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList', function(data) {
-
+    
         return new Promise(function (resolve, reject) {
             getJsonData('./agencyList.json')
             .then(function (value) {
-                resolve(value);
+                let agencies = [];
+
+                value.agency.forEach(function (agency, index) {
+                    let name = agency.title;
+                    let tag = agency.tag;
+
+                    agencies.push({
+                        name: name,
+                        tag: tag
+                    });
+                });
+
+                resolve(agencies);
             });
         });
     },
     getBusRoutes: function () {
         let agencies;
 
-        module.exports.getBusAgencies()
+        getBusAgencies()
             .then(function (value) {
-                agencies = value;
+                agencies = value.agency;
 
-                console.log('aqui', agencies);
+                agencies.forEach(function (agency, index) {
+                    let name = agency.title;
+                    let tag = agency.tag;
+
+                    // console.log(name, tage);
+                });
             });
     }
 };

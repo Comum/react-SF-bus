@@ -4,8 +4,15 @@ import { getBusAgencies, getBusRoutes } from '../data/getBusData';
 
 class RoutePicker extends React.Component {
     render() {
-        getBusRoutes();
+        /*let agencies = [];
 
+        getBusAgencies()
+            .then(function (value) {
+                agencies = value;
+            
+                console.log(agencies);
+            });*/
+        
         return (
             <div className="RoutePickerWrapper">
                 <div className="RoutePickerHeader">Select a route</div>
