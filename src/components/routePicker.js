@@ -2,6 +2,8 @@ import React from 'react';
 
 import { getBusAgencies, getBusRoutes } from '../data/getBusData';
 
+import AgencyList from './agencyList';
+
 class RoutePicker extends React.Component {
     constructor(props) {
         super(props);
@@ -26,6 +28,7 @@ class RoutePicker extends React.Component {
             return (
                 <div className="RoutePickerWrapper">
                     <div className="RoutePickerHeader">{headerTitle}</div>
+                    <AgencyList {...this.props}/>
                 </div>
             );
         }
