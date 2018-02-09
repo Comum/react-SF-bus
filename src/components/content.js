@@ -5,6 +5,11 @@ import RoutePicker from './routePicker';
 import SFMap from './SFMap';
 
 class Content extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+    }
+
     render() {
         return (
             <div className="contentWrapper">
@@ -12,7 +17,7 @@ class Content extends React.Component {
                     <RouteSelected />
                     <SFMap />
                 </div>
-                <RoutePicker />
+                <RoutePicker {...this.props}/>
             </div>
         );
     }

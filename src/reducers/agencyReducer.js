@@ -3,7 +3,7 @@ import agency from '../actions/agencyActions';
 
 const initalState = {
     agencies: [],
-    agencyLoading: false,
+    agencyLoading: true,
     numAgencies: 0
 };
 

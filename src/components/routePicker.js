@@ -3,21 +3,32 @@ import React from 'react';
 import { getBusAgencies, getBusRoutes } from '../data/getBusData';
 
 class RoutePicker extends React.Component {
-    render() {
-        /*let agencies = [];
+    constructor(props) {
+        super(props);
+        this.props = props;
+    }
 
-        getBusAgencies()
-            .then(function (value) {
-                agencies = value;
-            
-                console.log(agencies);
-            });*/
-        
-        return (
-            <div className="RoutePickerWrapper">
-                <div className="RoutePickerHeader">Select a route</div>
-            </div>
-        );
+    render() {
+        let headerTitle = '';
+        console.log('routePicker', this.props);
+
+        if (this.props.agencyLoading === true) {
+            headerTitle = 'Loading agencies';
+
+            return (
+                <div className="RoutePickerWrapper">
+                    <div className="RoutePickerHeader">{headerTitle}</div>
+                </div>
+            );
+        } else if (this.props.agencyLoading === false) {
+            headerTitle = 'Select an agency';
+
+            return (
+                <div className="RoutePickerWrapper">
+                    <div className="RoutePickerHeader">{headerTitle}</div>
+                </div>
+            );
+        }
     }
 }
 

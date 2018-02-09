@@ -10,12 +10,10 @@ class SfHome extends React.Component {
     }
     
     render() {
-        console.log('sfHome', this.props);
-
         return (
             <div className="app">
                 <Header />
-                <Content />
+                <Content {...this.props.agencies}/>
             </div>
         );
     }
