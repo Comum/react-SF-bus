@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import {getAgencyRoutes} from '../actions';
+import {getAgencyRoutes, pickAgencyRoutes} from '../actions';
 import SfHome from '../components/sfHome';
 
 const stateToProps = state => {
@@ -13,6 +13,9 @@ const dispatchToProps = dispatch => {
     return {
         onClickAgency: (...args) => {
             dispatch(getAgencyRoutes(...args))
+        },
+        onClickRoute: (...args) => {
+            dispatch(pickAgencyRoutes(...args))
         }
     };
 }

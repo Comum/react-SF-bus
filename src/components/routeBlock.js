@@ -7,7 +7,7 @@ class RouteBlock extends React.Component {
     }
 
     handleClick = () => {
-        // this.props.onClickRoute(this.props.route.tag);
+        this.props.onClickRoute(this.props.route.tag, this.props.route.title, this.props.agencies.agencyExpanded, this.props.agencies.agencyExpandedName);
     }
 
     render() {

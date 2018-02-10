@@ -9,13 +9,10 @@ class AgencyBlock extends React.Component {
     }
 
     handleClick = () => {
-        this.props.onClickAgency(this.props.agency.tag);
+        this.props.onClickAgency(this.props.agency.tag, this.props.agency.title);
     }
 
     render() {
-        console.log(this.props);
-        console.log(this.props.agency.tag);
-
         if (this.props.agencies.agencyExpanded !== this.props.agency.tag) {
             return (
                 <li className="agencyItem" 

@@ -6,7 +6,10 @@ const initalState = {
     agencyLoading: true,
     numAgencies: 0,
     agencyExpanded: '',
-    agencyRoutes: []
+    agencyExpandedName: '',
+    agencyRoutes: [],
+    pickedRouteName: '',
+    pickedRouteTag: ''
 };
 
 function reduceAgencyListRquested(state) {
@@ -17,11 +20,14 @@ function reduceAgencyListRquested(state) {
     };
 }
 
-function reduceAgencyRoutesRquested(state, agencyTag) {
+function reduceAgencyRoutesRquested(state, agency) {
+    let agencyAttrs = agency.split('_');
+
     return {
         ...state,
         agencyRoutesLoading: true,
-        agencyExpanded: agencyTag
+        agencyExpanded: agencyAttrs[0],
+        agencyExpandedName: agencyAttrs[1]
     };
 }
 
@@ -54,6 +60,18 @@ function reduceAgencyRoutesReceived(state, routes) {
     };
 }
 
+function saveAgencyRoute(state, pickedRoute) {
+    let routeAttrs = pickedRoute.split('_');
+
+    return {
+        ...state,
+        agencyExpanded: routeAttrs[2],
+        agencyExpandedName: routeAttrs[3],
+        pickedRouteName: routeAttrs[1],
+        pickedRouteTag: routeAttrs[0]
+    };
+}
+
 export default (state, action) => {
     if (typeof state === 'undefined') {
         state = initalState;
@@ -67,6 +85,8 @@ export default (state, action) => {
             return reduceAgencyRoutesRquested(state, action.data);
         case agency.AGENCY_ROUTES_RECEIVED:
             return reduceAgencyRoutesReceived(state, action.data);
+        case agency.SAVE_AGENCY_ROUTE:
+            return saveAgencyRoute(state, action.data);
         default:
             return state;
     }
