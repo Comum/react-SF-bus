@@ -12,6 +12,17 @@ function createAction(actionType) {
     }
 }
 
+const requestedAgencyRoutes = createAction(agencyActions.AGENCY_ROUTES_REQUESTED);
+const receivedProductRange = createAction(agencyActions.AGENCY_ROUTES_RECEIVED);
+export const getAgencyRoutes = agencyTag => {
+    return dispatch => {
+        dispatch(requestedAgencyRoutes(agencyTag));
+        return fetch(`http://webservices.nextbus.com/service/publicJSONFeed?command=routeList&a=${agencyTag}`)
+            .then(response => response.json())
+            .then(json => dispatch(receivedProductRange(json)))
+    }
+}
+
 export const receivedAgencies = createAction(agencyActions.AGENCY_LIST_RECEIVED);
 
 const requestedAgencies = createAction(agencyActions.AGENCY_LIST_REQUESTED);

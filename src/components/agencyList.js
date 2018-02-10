@@ -9,11 +9,9 @@ class AgencyList extends React.Component {
     }
 
     render() {
-        console.log('agencies', this.props);
-
         return (
             <ul className="agenciesContainer">
-                {this.props.agencies.map(agency => <AgencyBlock agency={agency} key={agency.tag} />)}
+                {this.props.agencies.agencies.map(agency => <AgencyBlock {...this.props} agency={agency} key={agency.tag} />)}
             </ul>
         );
     }

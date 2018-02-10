@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 
+import {getAgencyRoutes} from '../actions';
 import SfHome from '../components/sfHome';
 
 const stateToProps = state => {
@@ -9,7 +10,11 @@ const stateToProps = state => {
 }
 
 const dispatchToProps = dispatch => {
-    return {};
+    return {
+        onClickAgency: (...args) => {
+            dispatch(getAgencyRoutes(...args))
+        }
+    };
 }
 
 const SfHomeContainer = connect(stateToProps, dispatchToProps)(SfHome);

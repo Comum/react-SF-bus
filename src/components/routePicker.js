@@ -12,9 +12,8 @@ class RoutePicker extends React.Component {
 
     render() {
         let headerTitle = '';
-        console.log('routePicker', this.props);
 
-        if (this.props.agencyLoading === true) {
+        if (this.props.agencies.agencyLoading === true) {
             headerTitle = 'Loading agencies';
 
             return (
@@ -22,7 +21,7 @@ class RoutePicker extends React.Component {
                     <div className="RoutePickerHeader">{headerTitle}</div>
                 </div>
             );
-        } else if (this.props.agencyLoading === false) {
+        } else if (this.props.agencies.agencyLoading === false) {
             headerTitle = 'Select an agency';
 
             return (

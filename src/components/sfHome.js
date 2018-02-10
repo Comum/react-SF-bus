@@ -13,7 +13,7 @@ class SfHome extends React.Component {
         return (
             <div className="app">
                 <Header />
-                <Content {...this.props.agencies}/>
+                <Content {...this.props}/>
             </div>
         );
     }
