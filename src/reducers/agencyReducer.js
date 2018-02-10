@@ -21,13 +21,11 @@ function reduceAgencyListRquested(state) {
 }
 
 function reduceAgencyRoutesRquested(state, agency) {
-    let agencyAttrs = agency.split('_');
-
     return {
         ...state,
         agencyRoutesLoading: true,
-        agencyExpanded: agencyAttrs[0],
-        agencyExpandedName: agencyAttrs[1]
+        agencyExpanded: agency.agencyTag,
+        agencyExpandedName: agency.agencyName
     };
 }
 
@@ -60,15 +58,13 @@ function reduceAgencyRoutesReceived(state, routes) {
     };
 }
 
-function saveAgencyRoute(state, pickedRoute) {
-    let routeAttrs = pickedRoute.split('_');
-
+function saveAgencyRoute(state, route) {
     return {
         ...state,
-        agencyExpanded: routeAttrs[2],
-        agencyExpandedName: routeAttrs[3],
-        pickedRouteName: routeAttrs[1],
-        pickedRouteTag: routeAttrs[0]
+        agencyExpanded: route.agencyTag,
+        agencyExpandedName: route.agencyName,
+        pickedRouteName: route.routeName,
+        pickedRouteTag: route.routeTag
     };
 }
 

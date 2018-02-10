@@ -15,7 +15,7 @@ function createAction(actionType) {
 const saveAgencyRoute = createAction(agencyActions.SAVE_AGENCY_ROUTE);
 export const pickAgencyRoutes = (routeTag, routeName, agencyTag, agencyName) => {
     return dispatch => {
-        dispatch(saveAgencyRoute(routeTag + '_' + routeName + '_' + agencyTag + '_' + agencyName));
+        dispatch(saveAgencyRoute({routeTag: routeTag, routeName: routeName, agencyTag: agencyTag, agencyName: agencyName}));
     }
 }
 
@@ -23,7 +23,7 @@ const requestedAgencyRoutes = createAction(agencyActions.AGENCY_ROUTES_REQUESTED
 const receivedProductRange = createAction(agencyActions.AGENCY_ROUTES_RECEIVED);
 export const getAgencyRoutes = (agencyTag, agencyName) => {
     return dispatch => {
-        dispatch(requestedAgencyRoutes(agencyTag + '_' + agencyName));
+        dispatch(requestedAgencyRoutes({agencyTag: agencyTag, agencyName: agencyName}));
         return fetch(`http://webservices.nextbus.com/service/publicJSONFeed?command=routeList&a=${agencyTag}`)
             .then(response => response.json())
             .then(json => dispatch(receivedProductRange(json)))
