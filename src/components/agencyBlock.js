@@ -8,10 +8,6 @@ class AgencyBlock extends React.Component {
         this.props = props;
     }
 
-    handleClick = () => {
-        this.props.onClickAgency(this.props.agency.tag, this.props.agency.title);
-    }
-
     render() {
         //console.log('aqui', this.props.agency.routes);
 
@@ -19,7 +15,6 @@ class AgencyBlock extends React.Component {
             return (
                 <li className="agencyItem--withResults" 
                     key={this.props.agency.tag}
-                    onClick={this.handleClick}
                     >
                     <div className="agencyItemHeader">
                         {this.props.agency.title}
@@ -31,7 +26,6 @@ class AgencyBlock extends React.Component {
             return (
                 <li className="agencyItem" 
                     key={this.props.agency.tag}
-                    onClick={this.handleClick}
                     >
                     {this.props.agency.title}
                 </li>

@@ -5,11 +5,8 @@ const initalState = {
     agencies: [],
     agencyLoading: true,
     numAgencies: 0,
-    agencyExpanded: '',
-    agencyExpandedName: '',
     agencyRoutes: [],
-    pickedRouteName: '',
-    pickedRouteTag: ''
+    selectedRoutes: []
 };
 
 function reduceAgencyListRquested(state) {
@@ -56,12 +53,18 @@ function reduceAgencyRoutesReceived(state, routes) {
 }
 
 function saveAgencyRoute(state, route) {
-    return {
-        ...state,
+    let selectedRoutes = state.selectedRoutes;
+
+    selectedRoutes.push({
         agencyExpanded: route.agencyTag,
         agencyExpandedName: route.agencyName,
         pickedRouteName: route.routeName,
         pickedRouteTag: route.routeTag
+    });
+
+    return {
+        ...state,
+        selectedRoutes: selectedRoutes
     };
 }
 

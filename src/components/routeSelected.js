@@ -7,11 +7,21 @@ class RouteSelected extends React.Component {
     }
 
     render() {
-        if (this.props.agencies.pickedRouteName && this.props.agencies.agencyExpandedName) {
+        if (this.props.agencies.selectedRoutes.length) {
+            let pickedRoutes = '';
+
+            this.props.agencies.selectedRoutes.forEach((route, index) => {
+                if (index === 0) {
+                    pickedRoutes = route.pickedRouteName;
+                } else {
+                    pickedRoutes = pickedRoutes + ', ' + route.pickedRouteName;
+                }
+            });
+
             return (
                 <div className="RouteSelectedWrapper">
                     <div className="RouteSelectedCurrentRoute">
-                        Picked {this.props.agencies.pickedRouteName} ({this.props.agencies.pickedRouteTag}) from {this.props.agencies.agencyExpandedName} ({this.props.agencies.agencyExpanded})
+                        {pickedRoutes}
                     </div>
                 </div>
             );
