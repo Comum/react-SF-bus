@@ -15,7 +15,7 @@ class Content extends React.Component {
             <div className="contentWrapper">
                 <div className="contentMain">
                     <RouteSelected {...this.props} />
-                    <SFMap />
+                    <SFMap {...this.props} />
                 </div>
                 <RoutePicker {...this.props}/>
             </div>
