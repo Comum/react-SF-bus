@@ -30,6 +30,8 @@
     "copy-webpack-plugin": "^4.4.0",
     "cross-fetch": "^1.1.1",
     "css-loader": "^0.28.9",
+    "d3": "^4.13.0",
+    "d3-geo": "^1.9.1",
     "expect": "^22.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
@@ -45,6 +47,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
     "thunk": "0.0.1",
+    "topojson": "^3.0.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   }

@@ -11,7 +11,7 @@ class RouteSelected extends React.Component {
             return (
                 <div className="RouteSelectedWrapper">
                     <div className="RouteSelectedCurrentRoute">
-                        Picked {this.props.agencies.pickedRouteName} from {this.props.agencies.agencyExpandedName}
+                        Picked {this.props.agencies.pickedRouteName} ({this.props.agencies.pickedRouteTag}) from {this.props.agencies.agencyExpandedName} ({this.props.agencies.agencyExpanded})
                     </div>
                 </div>
             );
