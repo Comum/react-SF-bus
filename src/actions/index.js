@@ -38,6 +38,35 @@ export const receiveBusAgencies = _ => {
       dispatch(requestedAgencies());
       return fetch(`http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList`)
         .then(response => response.json())
-        .then(json => dispatch(receivedAgencies(json.agency)));
+        .then(json => {
+            let _this;
+            let agenciesRoutes = {
+                agency: [],
+                copyright: json.copyright
+            };
+
+            return new Promise((resolve, reject) => {
+                json.agency.forEach((agency, index) => {
+                    _this = json.agency;
+                    fetch(`http://webservices.nextbus.com/service/publicJSONFeed?command=routeList&a=${agency.tag}`)
+                        .then(response => response.json())
+                        .then(json => {
+                            agenciesRoutes.agency.push({
+                                regionTitle: agency.regionTitle,
+                                tag: agency.tag,
+                                title: agency.title,
+                                routes: json
+                            });
+
+                            if (index === _this.length - 1) {
+                                resolve();
+                            }
+                        });
+                });
+            })
+            .then(() => {
+                dispatch(receivedAgencies(agenciesRoutes));
+            });
+        });
     };
 };

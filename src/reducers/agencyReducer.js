@@ -30,9 +30,6 @@ function reduceAgencyRoutesRquested(state, agency) {
 }
 
 function reduceAgencyListReceived(state, agencies) {
-    agencies = agencies.map(agency => {
-        return agency;
-    });
     return {
         ...state,
         agencies,

@@ -13,16 +13,9 @@ class AgencyBlock extends React.Component {
     }
 
     render() {
-        if (this.props.agencies.agencyExpanded !== this.props.agency.tag) {
-            return (
-                <li className="agencyItem" 
-                    key={this.props.agency.tag}
-                    onClick={this.handleClick}
-                    >
-                    {this.props.agency.title}
-                </li>
-            );
-        } else {
+        //console.log('aqui', this.props.agency.routes);
+
+        if (this.props.agency.routes.route && this.props.agency.routes.route.length > 0) {
             return (
                 <li className="agencyItem--withResults" 
                     key={this.props.agency.tag}
@@ -31,7 +24,16 @@ class AgencyBlock extends React.Component {
                     <div className="agencyItemHeader">
                         {this.props.agency.title}
                     </div>
-                    <RouteList {...this.props} />
+                    <RouteList {...this.props} agencyRoutes={this.props.agency.routes.route} />
+                </li>
+            );
+        } else {
+            return (
+                <li className="agencyItem" 
+                    key={this.props.agency.tag}
+                    onClick={this.handleClick}
+                    >
+                    {this.props.agency.title}
                 </li>
             );
         }

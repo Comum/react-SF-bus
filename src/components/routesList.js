@@ -11,7 +11,7 @@ class RouteList extends React.Component {
     render() {
         return (
             <ul className="routesContainer">
-                {this.props.agencies.agencyRoutes.map(route => <RouteBlock {...this.props} route={route} key={route.tag} />)}
+                {this.props.agencyRoutes.map(route => <RouteBlock {...this.props} route={route} key={route.tag} />)}
             </ul>
         );
     }
