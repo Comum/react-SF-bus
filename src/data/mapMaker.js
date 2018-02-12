@@ -22,6 +22,10 @@ module.exports = {
         }
     },
     createBus: function (selectedRoutes) {
-        console.log('mapMaker', selectedRoutes);
+        selectedRoutes.forEach((route) => {
+            let data = route.routesVehicles;
+
+            console.log('mapMaker', data);
+        });
     }
 }
