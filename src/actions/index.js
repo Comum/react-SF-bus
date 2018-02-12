@@ -56,26 +56,25 @@ export const receiveBusAgencies = _ => {
       return fetch(`http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList`)
         .then(response => response.json())
         .then(json => {
-            let _this;
             let agenciesRoutes = {
                 agency: [],
                 copyright: json.copyright
             };
+            let numAgencies = json.agency.length;
 
             return new Promise((resolve, reject) => {
                 json.agency.forEach((agency, index) => {
-                    _this = json.agency;
                     fetch(`http://webservices.nextbus.com/service/publicJSONFeed?command=routeList&a=${agency.tag}`)
                         .then(response => response.json())
-                        .then(json => {
+                        .then(routes => {
                             agenciesRoutes.agency.push({
                                 regionTitle: agency.regionTitle,
                                 tag: agency.tag,
                                 title: agency.title,
-                                routes: json
+                                routes: routes
                             });
 
-                            if (index === _this.length - 1) {
+                            if (index ===  numAgencies - 1) {
                                 resolve();
                             }
                         });
