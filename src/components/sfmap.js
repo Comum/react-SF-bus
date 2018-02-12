@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { createMap } from '../data/mapMaker';
-
-import { getBusPosition } from '../data/nextBus';
+import { createMap, createBus } from '../data/mapMaker';
 
 class SFMap extends React.Component {
     constructor(props) {
@@ -16,16 +14,7 @@ class SFMap extends React.Component {
         createMap();
 
         if (this.props.agencies.selectedRoutes.length) {
-            return new Promise((resolve, reject) => {
-               resolve(getBusPosition(this.props.agencies.selectedRoutes)); 
-            })
-            .then((value) => {
-                console.log(value);
-                return (
-                    <div className="SFMapWrapper" id="map"></div>
-                );
-            }); 
-                
+            createBus(this.props.agencies.selectedRoutes);
         }
 
         return (

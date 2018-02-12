@@ -15,7 +15,23 @@ function createAction(actionType) {
 const saveAgencyRoute = createAction(agencyActions.SAVE_AGENCY_ROUTE);
 export const pickAgencyRoutes = (routeTag, routeName, agencyTag, agencyName) => {
     return dispatch => {
-        dispatch(saveAgencyRoute({routeTag: routeTag, routeName: routeName, agencyTag: agencyTag, agencyName: agencyName}));
+        let currentTime = new Date().getTime();
+        let url = `http://webservices.nextbus.com/service/publicJSONFeed?command=vehicleLocations&a=${agencyTag}&r=${routeTag}&t=${currentTime}`;
+
+        return fetch(url)
+            .then(response => response.json())
+            .then(json => {
+                // if statement just for testing purposes
+                if (!json.vehicle) {
+                    fetch('./json/busExample.json')
+                        .then(response => response.json())
+                        .then((json) => {
+                            dispatch(saveAgencyRoute({routeTag: routeTag, routeName: routeName, agencyTag: agencyTag, agencyName: agencyName, busRoutes: json}));
+                        })
+                } else {
+                    dispatch(saveAgencyRoute({routeTag: routeTag, routeName: routeName, agencyTag: agencyTag, agencyName: agencyName, busRoutes: json}));
+                }
+            });
     }
 }
 

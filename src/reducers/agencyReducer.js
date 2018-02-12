@@ -54,12 +54,13 @@ function reduceAgencyRoutesReceived(state, routes) {
 
 function saveAgencyRoute(state, route) {
     let selectedRoutes = state.selectedRoutes;
-
+    
     selectedRoutes.push({
         agencyExpanded: route.agencyTag,
         agencyExpandedName: route.agencyName,
         pickedRouteName: route.routeName,
-        pickedRouteTag: route.routeTag
+        pickedRouteTag: route.routeTag,
+        routesVehicles: route.busRoutes.vehicle
     });
 
     return {

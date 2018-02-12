@@ -20,5 +20,8 @@ module.exports = {
                         .attr('height', height);
             }
         }
+    },
+    createBus: function (selectedRoutes) {
+        console.log('mapMaker', selectedRoutes);
     }
 }
