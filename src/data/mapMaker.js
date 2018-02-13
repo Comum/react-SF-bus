@@ -29,6 +29,19 @@ function getLimits(data) {
     });
 }
 
+function getColor(index) {
+    switch(index) {
+        case 0:
+            return 'green'
+        case 1:
+            return 'blue'
+        case 2:
+            return 'red'
+        default:
+            return 'gray'
+    }
+}
+
 module.exports = {
     createMap: function () {
         let el = document.getElementById('map');
@@ -39,11 +52,10 @@ module.exports = {
             width = el.clientWidth;
             height = el.clientHeight;
 
-            console.log('works', width, height);
-
             if (el.children.length === 0) {
                 let svg = d3.select('#map')
                     .append('svg')
+                        .attr('id', 'svg')
                         .attr('width', width)
                         .attr('height', height);
             }
@@ -85,10 +97,46 @@ module.exports = {
         });
     },
     createBus: function (selectedRoutes, limits) {
-        selectedRoutes.forEach((route) => {
+        let svgEl = document.getElementById('svg');
+        let width = svgEl.clientWidth;
+        let height = svgEl.clientHeight;
+        let color;
+
+        let svg = d3.select('#svg');
+
+        let yScale = d3.scaleLinear()
+            .domain([limits.minLat, limits.maxLat])
+            .range([height, 0]);
+
+        let xScale = d3.scaleLinear()
+            .domain([limits.minLon, limits.maxLon])
+            .range([0, width]);
+
+        selectedRoutes.forEach((route, index) => {
             let data = route.routesVehicles;
 
-            console.log('vehicles', data, limits);
+            let circles = svg
+                .selectAll('.ball')
+                .data(data)
+                .enter()
+                .append('g')
+                .attr('class', 'ball')
+                .attr('transform', d => {
+                    return `translate(${xScale(d.lon)}, ${yScale(d.lat)})`;
+                });
+            
+            color = getColor(index);
+            
+            circles
+                .append('circle')
+                .attr('cx', 0)
+                .attr('cy', 0)
+                .attr('r', 5)
+                .style('fill-opacity', 0.5)
+                .style('fill', color);
+
+            // left to see if some bus are different than the test ones
+            console.log('vehicle list', data);
         });
     }
 }
