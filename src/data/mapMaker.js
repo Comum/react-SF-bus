@@ -49,42 +49,46 @@ module.exports = {
             }
         }
     },
-    createBus: function (selectedRoutes) {
-        selectedRoutes.forEach((route) => {
-            let data = route.routesVehicles;
+    getMapLimits: function () {
+        return new Promise((resolve, reject) => {
+            d3.json('./json/arteries.json', (err, data) => {
+                getLimits(data);
 
+                resolve();
+            });
+        })
+        .then(() => {
             return new Promise((resolve, reject) => {
-                d3.json('./json/arteries.json', (err, data) => {
+                d3.json('./json/freeways.json', (err, data) => {
                     getLimits(data);
 
                     resolve();
                 });
             })
-            .then(() => {
-                console.log('fim', minLat, minLon, maxLat, maxLon);
-                return new Promise((resolve, reject) => {
-                    d3.json('./json/freeways.json', (err, data) => {
-                        getLimits(data);
-    
-                        resolve();
-                    });
-                })
-            })
-            .then(() => {
-                console.log('fim', minLat, minLon, maxLat, maxLon);
-                return new Promise((resolve, reject) => {
-                    d3.json('./json/streets.json', (err, data) => {
-                        getLimits(data);
-    
-                        resolve();
-                    });
-                })
-            })
-            .then(() => {
-                console.log('fim', minLat, minLon, maxLat, maxLon);
-            });
+        })
+        .then(() => {
+            return new Promise((resolve, reject) => {
+                d3.json('./json/streets.json', (err, data) => {
+                    getLimits(data);
 
-            console.log('mapMaker', data);
+                    resolve();
+                });
+            })
+        })
+        .then(() => {
+            return {
+                minLat: minLat,
+                minLon: minLon,
+                maxLat: maxLat,
+                maxLon: maxLon
+            };
+        });
+    },
+    createBus: function (selectedRoutes, limits) {
+        selectedRoutes.forEach((route) => {
+            let data = route.routesVehicles;
+
+            console.log('vehicles', data, limits);
         });
     }
 }

@@ -14,7 +14,7 @@ class SFMap extends React.Component {
         createMap();
 
         if (this.props.agencies.selectedRoutes.length) {
-            createBus(this.props.agencies.selectedRoutes);
+            createBus(this.props.agencies.selectedRoutes, this.props.agencies.coordinatesLimits);
         }
 
         return (

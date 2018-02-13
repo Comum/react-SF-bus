@@ -1,6 +1,12 @@
 import fetch from 'cross-fetch';
 
 import agencyActions from './agencyActions';
+import {getMapLimits} from '../data/mapMaker';
+
+let minLat = 1000;
+let maxLat = -1000;
+let minLon = 1000;
+let maxLon = -1000;
 
 function createAction(actionType) {
     return data => {
@@ -58,7 +64,8 @@ export const receiveBusAgencies = _ => {
         .then(json => {
             let agenciesRoutes = {
                 agency: [],
-                copyright: json.copyright
+                copyright: json.copyright,
+                mapLimits: {}
             };
             let numAgencies = json.agency.length;
 
@@ -79,6 +86,16 @@ export const receiveBusAgencies = _ => {
                             }
                         });
                 });
+            })
+            .then(() => {
+                return new Promise((resolve, reject) => {
+                    getMapLimits()
+                    .then((value) => {
+                        agenciesRoutes.mapLimits = value;
+
+                        resolve();
+                    });
+                })
             })
             .then(() => {
                 dispatch(receivedAgencies(agenciesRoutes));

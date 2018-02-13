@@ -6,7 +6,13 @@ const initalState = {
     agencyLoading: true,
     numAgencies: 0,
     agencyRoutes: [],
-    selectedRoutes: []
+    selectedRoutes: [],
+    coordinatesLimits: {
+        minLat: 0,
+        maxLat: 0,
+        minLon: 0,
+        maxLon: 0
+    }
 };
 
 function reduceAgencyListRquested(state) {
@@ -31,7 +37,13 @@ function reduceAgencyListReceived(state, agencies) {
         ...state,
         agencies,
         agencyLoading: false,
-        numAgencies: agencies.length
+        numAgencies: agencies.length,
+        coordinatesLimits: {
+            minLat: agencies.mapLimits.minLat,
+            maxLat: agencies.mapLimits.maxLat,
+            minLon: agencies.mapLimits.minLon,
+            maxLon: agencies.mapLimits.maxLon
+        }
     };
 }
 
